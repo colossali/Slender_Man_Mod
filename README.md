@@ -1,6 +1,3 @@
-####Slender_Man_Mod
-===============
-
 ##Slender Man Mod for Minecraft
 
 This is the *official* repository for the Slender Man mod.
@@ -13,15 +10,15 @@ Please follow coding guidelines below.
 *Use comments and annotate! Tons! Just go to town with the comments!
 *Indent with the Eclipse IDE style:
 
-  method()
-  {
-        variables
-        
-        statements()
+        method()
         {
-              conditions and output
+              variables
+        
+              statements()
+              {
+                    conditions and output
+              }
         }
-  }
   
 *if using eclipse, press ctrl-a then ctrl-i to do that automatically.
 
