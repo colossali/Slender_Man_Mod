@@ -49,6 +49,8 @@ import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
 
 import colossali.Slender.client.ClientProxy;
+import colossali.Slender.mobspawner.BlockSlenderSpawner;
+import colossali.Slender.mobspawner.TileEntitySlenderSpawner;
 import paulscode.sound.SoundSystem;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.FMLLog;
@@ -88,6 +90,7 @@ public class mod_slenderman
     )
 	    public static CommonProxy proxy;
     
+    //Item IDs
     public static int ChildSoulID = 4150;
     public static int SlenderMaskID = 4151;
     public static int SlenderSuitID = 4152;
@@ -96,9 +99,9 @@ public class mod_slenderman
     public static int SlenderSwordID = 4155;
     public static int SlenderNoteID = 4156;
     public static int SlenderManID = 123;
-    public static int SlenderNoteEntityID = 124;
     public static int SlenderSpawnerID = 3102;
     
+    //Items
     public static Item ItemChildSoul;
     public static Item ItemSlenderMask;
     public static Item ItemSlenderSuit;
@@ -106,14 +109,18 @@ public class mod_slenderman
     public static Item ItemSlenderShoes;
     public static Item ItemSlenderSword;
     
+    //Blocks
     public static Block BlockSlenderSpawner;
     
+    //Achievements
     public static Achievement killedSlenderMan;
     
     public static boolean canSpawn = true;
     public static boolean spawned = true;
     
 
+    //Configuration file
+    
     @Mod.PreInit
     public void preInit(FMLPreInitializationEvent var1)
     {
@@ -139,8 +146,6 @@ public class mod_slenderman
             SlenderNoteID = var3.getInt(4156);
             var3 = var2.get("SlenderNote", "general", 123);
             SlenderManID = var3.getInt(123);
-            var3 = var2.get("SlenderNoteEntity", "general", 124);
-            SlenderNoteEntityID = var3.getInt(124);
             var3 = var2.get("SlenderSpawnerID", "block", 3102);
             SlenderSpawnerID = var3.getInt(3102);
             
@@ -190,6 +195,7 @@ public class mod_slenderman
         ModLoader.addAchievementDesc(killedSlenderMan, "Slender Slayer", "/u00a7kasfgfaw");
         
         LanguageRegistry.instance().addStringLocalization("entity.Slender Man.name", "en_US", "Slender Man");
+        GameRegistry.registerTileEntity(TileEntitySlenderSpawner.class, "Slender Spawner");
         
 
       

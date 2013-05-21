@@ -1,6 +1,7 @@
 package colossali.Slender.client;
 
 import cpw.mods.fml.client.FMLClientHandler;
+import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.common.TickType;
@@ -13,7 +14,9 @@ import colossali.Slender.common.EntitySlenderMan;
 import colossali.Slender.common.mod_slenderman;
 import colossali.Slender.common.CommonProxy;
 import colossali.Slender.hud.ClientStaticEffect;
+import colossali.Slender.mobspawner.TileEntitySlenderSpawner;
 import colossali.Slender.model.ModelSlenderman;
+import colossali.Slender.render.RenderSlenderSpawnerTileEntity;
 import colossali.Slender.render.RenderSlenderman;
 
 import net.minecraft.client.Minecraft;
@@ -43,6 +46,7 @@ public class ClientProxy extends CommonProxy
         LanguageRegistry.addName(mod_slenderman.ItemSlenderSuit, "Slender Suit");
         LanguageRegistry.addName(mod_slenderman.ItemSlenderSword, "Slender Sword");       
         RenderingRegistry.registerEntityRenderingHandler(EntitySlenderMan.class, new RenderSlenderman(new ModelSlenderman(), 0.5F));
+        ClientRegistry.bindTileEntitySpecialRenderer(TileEntitySlenderSpawner.class, new RenderSlenderSpawnerTileEntity());
     }
     
 

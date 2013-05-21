@@ -27,7 +27,7 @@ public class ShrineWorldGen implements IWorldGenerator
 			int Xcoord = blockX + random.nextInt(16);
 			int Ycoord = random.nextInt(160);
 			int Zcoord = blockZ + random.nextInt(16);    
-			(new TestBlock()).generate(world, random, Xcoord, Ycoord, Zcoord);
+			(new SlenderShrine()).generate(world, random, Xcoord, Ycoord, Zcoord);
 
 		}
 	}
