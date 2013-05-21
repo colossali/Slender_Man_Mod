@@ -231,24 +231,13 @@ pip-log.txt
 /runtime/*
 /temp/*
 
+!/src/minecraft/colossali/*
 /src/minecraft_server/*
-/src/minecraft/net/*
-/src/minecraft/cpw/*
-/src/minecraft/ibxm/*
-/src/minecraft/paulscode/*
-/src/minecraft/Start.java
-/src/minecraft/fml_at.cfg
-/src/minecraft/fml_maker.cfg
-/src/minecraft/fmlversion.properties
-/src/minecraft/forge_at.cfg
-/src/minecraft/forge_logo.png
-/src/minecraft/mcp.png
-/src/minecraft/mcpmod.info
+/src/minecraft/*
 /src/common/*
 !/src/common/dries007/
 !/src/common/mcmod.info
 !/src/common/SP.png
-!/src/minecraft/colossali/*
 
 *.bat
 *.sh
