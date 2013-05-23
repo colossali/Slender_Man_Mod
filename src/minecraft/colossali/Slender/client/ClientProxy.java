@@ -16,6 +16,7 @@ import colossali.Slender.common.CommonProxy;
 import colossali.Slender.hud.ClientStaticEffect;
 import colossali.Slender.mobspawner.TileEntitySlenderSpawner;
 import colossali.Slender.model.ModelSlenderman;
+import colossali.Slender.render.RenderSlenderSpawnerItem;
 import colossali.Slender.render.RenderSlenderSpawnerTileEntity;
 import colossali.Slender.render.RenderSlenderman;
 
@@ -47,6 +48,7 @@ public class ClientProxy extends CommonProxy
         LanguageRegistry.addName(mod_slenderman.ItemSlenderSword, "Slender Sword");       
         RenderingRegistry.registerEntityRenderingHandler(EntitySlenderMan.class, new RenderSlenderman(new ModelSlenderman(), 0.5F));
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntitySlenderSpawner.class, new RenderSlenderSpawnerTileEntity());
+        MinecraftForgeClient.registerItemRenderer(mod_slenderman.BlockSlenderSpawner.blockID, new RenderSlenderSpawnerItem());
     }
     
 

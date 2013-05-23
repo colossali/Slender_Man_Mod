@@ -194,11 +194,8 @@ public class mod_slenderman
         
         ModLoader.addAchievementDesc(killedSlenderMan, "Slender Slayer", "/u00a7kasfgfaw");
         
-        LanguageRegistry.instance().addStringLocalization("entity.Slender Man.name", "en_US", "Slender Man");
-        GameRegistry.registerTileEntity(TileEntitySlenderSpawner.class, "Slender Spawner");
-        
-
-      
+        LanguageRegistry.instance().addStringLocalization("entity.Slender Man.name", "en_US", "SlenderMan");
+        GameRegistry.registerTileEntity(TileEntitySlenderSpawner.class, "Slender Spawner");   
 
         
     LanguageRegistry.addName(mod_slenderman.ItemChildSoul, "Child Soul");
@@ -209,9 +206,7 @@ public class mod_slenderman
     LanguageRegistry.addName(mod_slenderman.ItemSlenderSword, "Slender Sword");
     GameRegistry.registerBlock(BlockSlenderSpawner);
     GameRegistry.registerWorldGenerator(new ShrineWorldGen());
-    
-    	ModLoader.addSpawn(EntitySlenderMan.class, 1, 0, 1, EnumCreatureType.monster);
-    	GameRegistry.registerWorldGenerator(new ShrineWorldGen());
+    GameRegistry.registerWorldGenerator(new ShrineWorldGen());
 
     }
 

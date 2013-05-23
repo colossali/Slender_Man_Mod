@@ -21,14 +21,20 @@ public class ShrineWorldGen implements IWorldGenerator
 
 	public void generateSurface(World world, Random random, int blockX, int blockZ) 
 	{
+		Random rand = new Random();
+		int nextRand = rand.nextInt(20);
 
+		if(nextRand == 1)
+		{
 		for(int i = 0; i < 1; i++)
 		{
 			int Xcoord = blockX + random.nextInt(16);
-			int Ycoord = random.nextInt(160);
+			int Ycoord = random.nextInt(15);
 			int Zcoord = blockZ + random.nextInt(16);    
 			(new SlenderShrine()).generate(world, random, Xcoord, Ycoord, Zcoord);
+			System.out.println("Generated");
 
+		}
 		}
 	}
 
