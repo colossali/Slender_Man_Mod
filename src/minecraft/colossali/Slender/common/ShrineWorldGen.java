@@ -22,7 +22,7 @@ public class ShrineWorldGen implements IWorldGenerator
 	public void generateSurface(World world, Random random, int blockX, int blockZ) 
 	{
 		Random rand = new Random();
-		int nextRand = rand.nextInt(20);
+		int nextRand = rand.nextInt(15);
 
 		if(nextRand == 1)
 		{
@@ -32,7 +32,6 @@ public class ShrineWorldGen implements IWorldGenerator
 			int Ycoord = random.nextInt(15);
 			int Zcoord = blockZ + random.nextInt(16);    
 			(new SlenderShrine()).generate(world, random, Xcoord, Ycoord, Zcoord);
-			System.out.println("Generated");
 
 		}
 		}
