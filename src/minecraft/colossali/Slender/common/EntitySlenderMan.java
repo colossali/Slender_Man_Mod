@@ -643,7 +643,7 @@ public class EntitySlenderMan extends EntityMob
 
 	protected boolean canDespawn()
 	{
-		return false;
+		return true;
 	}
 
 	protected boolean teleportTo1(double var1, double var3, double var5)

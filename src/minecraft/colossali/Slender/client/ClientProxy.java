@@ -21,6 +21,7 @@ import colossali.Slender.render.RenderSlenderSpawnerTileEntity;
 import colossali.Slender.render.RenderSlenderman;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.src.ModLoader;
 import net.minecraft.world.World;
 import net.minecraftforge.client.MinecraftForgeClient;
 
@@ -32,7 +33,7 @@ public class ClientProxy extends CommonProxy
         MinecraftForgeClient.preloadTexture("/slenderman/slender_1.png");
         MinecraftForgeClient.preloadTexture("/slenderman/slender_2.png");
         
-        RenderingRegistry.instance().registerEntityRenderingHandler(EntitySlenderMan.class, new RenderSlenderman(new ModelSlenderman(), 0.5F));
+        RenderingRegistry.registerEntityRenderingHandler(EntitySlenderMan.class, new RenderSlenderman(new ModelSlenderman(), 0.5F));
     }
 
     public void load()
@@ -46,9 +47,9 @@ public class ClientProxy extends CommonProxy
         LanguageRegistry.addName(mod_slenderman.ItemSlenderShoes, "Slender Shoes");
         LanguageRegistry.addName(mod_slenderman.ItemSlenderSuit, "Slender Suit");
         LanguageRegistry.addName(mod_slenderman.ItemSlenderSword, "Slender Sword");       
-        RenderingRegistry.registerEntityRenderingHandler(EntitySlenderMan.class, new RenderSlenderman(new ModelSlenderman(), 0.5F));
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntitySlenderSpawner.class, new RenderSlenderSpawnerTileEntity());
         MinecraftForgeClient.registerItemRenderer(mod_slenderman.BlockSlenderSpawner.blockID, new RenderSlenderSpawnerItem());
+        ModLoader.addAchievementDesc(mod_slenderman.killedSlenderMan, "Slender Slayer", "/u00a7kasfgfaw");
     }
     
 

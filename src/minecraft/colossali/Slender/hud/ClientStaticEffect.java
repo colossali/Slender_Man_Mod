@@ -33,7 +33,7 @@ public class ClientStaticEffect implements ITickHandler
 			return;
 		
 		ItemStack helmet = Minecraft.getMinecraft().thePlayer.inventory.armorItemInSlot(3);
-		if(Minecraft.getMinecraft().gameSettings.thirdPersonView == 0)
+		if(Minecraft.getMinecraft().gameSettings.thirdPersonView == 0 || Minecraft.getMinecraft().currentScreen != null)
 		{
 			GL11.glPushAttrib(GL11.GL_ALL_ATTRIB_BITS);
 			

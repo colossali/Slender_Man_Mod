@@ -99,6 +99,7 @@ public class mod_slenderman
     public static int SlenderSwordID = 4155;
     public static int SlenderNoteID = 4156;
     public static int SlenderManID = 123;
+    public static int MaskyID = 146;
     public static int SlenderSpawnerID = 3102;
     
     //Items
@@ -115,7 +116,7 @@ public class mod_slenderman
     //Achievements
     public static Achievement killedSlenderMan;
     
-    public static boolean canSpawn = true;
+    public static boolean canSpawn = false;
     public static boolean spawned = true;
     
 
@@ -144,8 +145,10 @@ public class mod_slenderman
             SlenderSwordID = var3.getInt(4155);
             var3 = var2.get("SlenderNote", "item", 4156);
             SlenderNoteID = var3.getInt(4156);
-            var3 = var2.get("SlenderNote", "general", 123);
+            var3 = var2.get("Slender Man", "general", 123);
             SlenderManID = var3.getInt(123);
+            var3 = var2.get("Masky", "general", 146);
+            MaskyID = var3.getInt(146);
             var3 = var2.get("SlenderSpawnerID", "block", 3102);
             SlenderSpawnerID = var3.getInt(3102);
             
@@ -190,11 +193,13 @@ public class mod_slenderman
        
         
         EntityRegistry.registerGlobalEntityID(EntitySlenderMan.class, "Slender Man", SlenderManID, 16260, 11020932);
-        EntityRegistry.registerModEntity(EntitySlenderMan.class, "Slender Man", SlenderManID, this, 1000, 1, false);
-        
-        ModLoader.addAchievementDesc(killedSlenderMan, "Slender Slayer", "/u00a7kasfgfaw");
-        
+        EntityRegistry.registerModEntity(EntitySlenderMan.class, "Slender Man", SlenderManID, this, 1000, 1, false);               
         LanguageRegistry.instance().addStringLocalization("entity.Slender Man.name", "en_US", "SlenderMan");
+        
+        EntityRegistry.registerGlobalEntityID(EntityMasky.class, "Masky", MaskyID, 1460, 91089032);
+        EntityRegistry.registerModEntity(EntityMasky.class, "Masky", MaskyID, this, 1000, 1, false);               
+        LanguageRegistry.instance().addStringLocalization("entity.Masky.name", "en_US", "Masky");
+        
         GameRegistry.registerTileEntity(TileEntitySlenderSpawner.class, "Slender Spawner");   
 
         
@@ -207,6 +212,8 @@ public class mod_slenderman
     GameRegistry.registerBlock(BlockSlenderSpawner);
     GameRegistry.registerWorldGenerator(new ShrineWorldGen());
     GameRegistry.registerWorldGenerator(new ShrineWorldGen());
+    
+    ModLoader.addSpawn(EntityMasky.class, 1, 0, 1, EnumCreatureType.monster);
 
     }
 

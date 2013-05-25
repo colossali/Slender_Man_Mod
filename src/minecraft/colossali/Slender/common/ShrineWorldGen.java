@@ -21,20 +21,21 @@ public class ShrineWorldGen implements IWorldGenerator
 
 	public void generateSurface(World world, Random random, int blockX, int blockZ) 
 	{
-		Random rand = new Random();
-		int nextRand = rand.nextInt(15);
+		
+		//Random rand = new Random();
+		//int nextRand = rand.nextInt(15);
 
-		if(nextRand == 1)
-		{
+
 		for(int i = 0; i < 1; i++)
 		{
 			int Xcoord = blockX + random.nextInt(16);
-			int Ycoord = random.nextInt(15);
+			int Ycoord = random.nextInt(30);
 			int Zcoord = blockZ + random.nextInt(16);    
 			(new SlenderShrine()).generate(world, random, Xcoord, Ycoord, Zcoord);
+			System.out.println("Generated");
 
 		}
-		}
+		
 	}
 
 	private void generateNether(World world, Random random, int blockX, int blockZ) 
