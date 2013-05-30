@@ -29,11 +29,14 @@ public class ClientStaticEffect implements ITickHandler
 	@Override
 	public void tickEnd(EnumSet<TickType> type, Object... tickData)
 	{
-		if(Minecraft.getMinecraft().thePlayer == null || Minecraft.getMinecraft().currentScreen != null)
+		if(Minecraft.getMinecraft().thePlayer == null || Minecraft.getMinecraft().currentScreen != null || Minecraft.getMinecraft().gameSettings.keyBindPlayerList.pressed)
+		{
+			EntitySlenderMan.opacity = 0;
 			return;
+		}
 		
 		ItemStack helmet = Minecraft.getMinecraft().thePlayer.inventory.armorItemInSlot(3);
-		if(Minecraft.getMinecraft().gameSettings.thirdPersonView == 0 || Minecraft.getMinecraft().currentScreen != null)
+		if(Minecraft.getMinecraft().gameSettings.thirdPersonView == 0)
 		{
 			GL11.glPushAttrib(GL11.GL_ALL_ATTRIB_BITS);
 			
@@ -43,16 +46,16 @@ public class ClientStaticEffect implements ITickHandler
 			int width = scale.getScaledWidth();
 			int height = scale.getScaledHeight();
 			
+			GL11.glColor4f(1.0F, 1.0F, 1.0F, EntitySlenderMan.opacity);
 			GL11.glDisable(GL11.GL_DEPTH_TEST);
 			GL11.glDepthMask(false);
 			GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
-			GL11.glColor4f(1.0F, 1.0F, 1.0F, EntitySlenderMan.opacity);
 			GL11.glDisable(GL11.GL_ALPHA_TEST);
 			
 			if (ClientTickHandler.StaticLoop)
 			GL11.glBindTexture(GL11.GL_TEXTURE_2D, Minecraft.getMinecraft().renderEngine.getTexture("%blur%/slenderman/static.png"));
 			else if (!ClientTickHandler.StaticLoop)
-				GL11.glBindTexture(GL11.GL_TEXTURE_2D, Minecraft.getMinecraft().renderEngine.getTexture("%blur%/slenderman/static2.png"));
+			GL11.glBindTexture(GL11.GL_TEXTURE_2D, Minecraft.getMinecraft().renderEngine.getTexture("%blur%/slenderman/static2.png"));
 
 			
 			t.startDrawingQuads();
@@ -64,11 +67,7 @@ public class ClientStaticEffect implements ITickHandler
 			
 			GL11.glPopAttrib();
 		}
-		
-		else if (helmet != null && helmet.itemID == mod_slenderman.ItemSlenderMask.itemID)
-		{
-			
-		}
+
 	}
 
 	@Override

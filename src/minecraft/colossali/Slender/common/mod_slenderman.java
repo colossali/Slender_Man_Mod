@@ -126,6 +126,12 @@ public class mod_slenderman
     public void preInit(FMLPreInitializationEvent var1)
     {
         proxy.preInit();
+        
+        if(FMLCommonHandler.instance().getSide().isClient())
+        {
+        MinecraftForge.EVENT_BUS.register(new SoundsSlenderman());//if your class is something other than Sounds change Sounds to your class
+        }
+        
         Configuration var2 = new Configuration(var1.getSuggestedConfigurationFile());
 
         try

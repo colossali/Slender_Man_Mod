@@ -206,7 +206,7 @@ public class EntitySlenderMan extends EntityMob
 				int playscarynoise = randomer.nextInt(5);
 				if(ScaryTimer == 300 && playscarynoise == 5)
 				{
-					this.worldObj.playSoundAtEntity(var3, "mob.slender.scare", this.getSoundVolume(), 1.0F);
+					this.worldObj.playSoundAtEntity(var3, "scare", this.getSoundVolume(), 1.0F);
 					ScaryTimer = 0;
 				}
 			}
@@ -214,7 +214,7 @@ public class EntitySlenderMan extends EntityMob
 
 			if (this.getDistancetoEntityToAttack() <= 64.0D && musictimer == 2400)
 			{
-				this.worldObj.playSoundAtEntity(this, "mob.slender.close", this.getSoundVolume() + 10F, 1.0F);
+				this.worldObj.playSoundAtEntity(this, "close", this.getSoundVolume() + 10F, 1.0F);
 				musictimer = 0;
 			}
 
@@ -227,7 +227,7 @@ public class EntitySlenderMan extends EntityMob
 					opacity = 1.5F/level;	
 					if(staticsoundtimer == 20)
 					{
-						this.worldObj.playSoundAtEntity(this, "mob.slender.static", this.getSoundVolume() + opacity*4, 1.0F);
+						this.worldObj.playSoundAtEntity(this, "static", this.getSoundVolume() + opacity*4, 1.0F);
 						staticsoundtimer = 0;
 					}
 				}
@@ -255,7 +255,7 @@ public class EntitySlenderMan extends EntityMob
 						teleportTo1(newRandX, var3.posY, newRandZ);
 						if(ScaryTimer == 300)
 						{
-							this.worldObj.playSoundAtEntity(var3, "mob.slender.scare", this.getSoundVolume(), 1.0F);
+							this.worldObj.playSoundAtEntity(var3, "scare", this.getSoundVolume(), 1.0F);
 							ScaryTimer = 0;
 						}
 						timeTillNextTeleport = 0;
@@ -286,7 +286,7 @@ public class EntitySlenderMan extends EntityMob
 
 				if (this.worldObj.getFullBlockLightValue(MathHelper.floor_double(this.posX), MathHelper.floor_double(this.posY), MathHelper.floor_double(this.posZ)) < 1 && this.worldObj.getFullBlockLightValue(MathHelper.floor_double(this.entityToAttack.posX), MathHelper.floor_double(this.entityToAttack.posY), MathHelper.floor_double(this.entityToAttack.posZ)) < 1)
 				{
-					this.worldObj.playSoundAtEntity(this, "mob.slender.attack", this.getSoundVolume(), ((this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F) * 1.8F);
+					this.worldObj.playSoundAtEntity(this, "attack", this.getSoundVolume(), ((this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F) * 1.8F);
 				}
 
 				if (this.petrifyTimer <= 20 && this.petrifyTimer >= 15 && this.potiontimer == 200)
@@ -308,7 +308,7 @@ public class EntitySlenderMan extends EntityMob
 
 					if (this.directlookscare == 60)
 					{
-						this.worldObj.playSoundAtEntity(var3, "mob.slender.lights", this.getSoundVolume(), ((this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F) * 1.8F);
+						this.worldObj.playSoundAtEntity(var3, "lights", this.getSoundVolume(), ((this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F) * 1.8F);
 						this.directlookscare = 0;
 					}
 				}
@@ -918,7 +918,7 @@ public class EntitySlenderMan extends EntityMob
 	 */
 	protected String getDeathSound()
 	{
-		return "mob.slender.death";
+		return "death";
 	}
 
 	@Override
