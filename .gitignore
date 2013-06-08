@@ -235,9 +235,6 @@ pip-log.txt
 /src/minecraft_server/*
 /src/minecraft/*
 /src/common/*
-!/src/common/dries007/
-!/src/common/mcmod.info
-!/src/common/SP.png
 
 *.bat
 *.sh
