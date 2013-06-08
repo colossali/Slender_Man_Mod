@@ -177,7 +177,6 @@ public class ClientTickHandler implements ITickHandler
 	        		int newZ =(int) randomZonCircle(40, 100, var3.posZ);  
 	        		
 	        		this.teleportTo1(newX, var3.posY, newZ);
-		        	var3.sendChatMessage("suiton");
 	        	}
 
 	        }
