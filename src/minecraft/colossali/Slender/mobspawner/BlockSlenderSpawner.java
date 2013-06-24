@@ -135,7 +135,7 @@ public class BlockSlenderSpawner extends BlockContainer
                             var1.playSoundEffect((double)var2 + 0.5D, (double)var3 + 0.5D, (double)var4 + 0.5D, "ambient.cave.cave", 35.0F, 0.8F);
                             var1.playSoundEffect((double)var2 + 0.5D, (double)var3 + 0.5D, (double)var4 + 0.5D, "ambient.cave.cave", 35.0F, 0.8F);
                             if(var7 != null)
-                            var7.addChatMessage("\u00a7k\u00a7412948f0f2gad");
+                            var7.addChatMessage("\u00a7k12948f0f2gad");
                             var1.spawnEntityInWorld(new EntityLightningBolt(var1, (double)var2, (double)(var3 + 2), (double)var4));
                             var1.addWeatherEffect(new EntityLightningBolt(var1, (double)var2, (double)(var3 + 2), (double)var4));
                         }

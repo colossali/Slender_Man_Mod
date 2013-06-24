@@ -4,8 +4,10 @@ import java.util.EnumSet;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiChat;
+import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.renderer.Tessellator;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
@@ -15,6 +17,7 @@ import colossali.Slender.client.ClientTickHandler;
 import colossali.Slender.common.EntitySlenderMan;
 import colossali.Slender.common.mod_slenderman;
 
+import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.common.ITickHandler;
 import cpw.mods.fml.common.TickType;
 
@@ -28,7 +31,36 @@ public class ClientStaticEffect implements ITickHandler
 
 	@Override
 	public void tickEnd(EnumSet<TickType> type, Object... tickData)
-	{
+	{ 
+		Minecraft minecraft = FMLClientHandler.instance().getClient();
+		EntityPlayer player = minecraft.thePlayer;
+		
+		if(type.equals(EnumSet.of(TickType.RENDER))) {
+			
+			if(minecraft.isGuiEnabled() && minecraft.inGameHasFocus)
+			onRenderTick();
+		}
+		else if(type.equals(EnumSet.of(TickType.CLIENT))){
+			GuiScreen guiScreen = Minecraft.getMinecraft().currentScreen;
+			if(guiScreen == null){
+				onTickInGame();
+			}
+			else onTickInGui(guiScreen);
+		}
+
+		
+		
+	}
+
+	private void onTickInGui(GuiScreen guiScreen) {
+		
+	}
+
+	private void onTickInGame() {
+		
+	}
+
+	private void onRenderTick() {
 		if(Minecraft.getMinecraft().thePlayer == null || Minecraft.getMinecraft().currentScreen != null || Minecraft.getMinecraft().gameSettings.keyBindPlayerList.pressed)
 		{
 			EntitySlenderMan.opacity = 0;
@@ -68,6 +100,7 @@ public class ClientStaticEffect implements ITickHandler
 			GL11.glPopAttrib();
 		}
 
+		
 	}
 
 	@Override

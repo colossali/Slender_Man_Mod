@@ -39,7 +39,7 @@ public class EntityMasky extends EntityMob
     {
         super(par1World);
         this.texture = "/slenderman/masky.png";
-        this.moveSpeed = 0.68F;
+        this.moveSpeed = 0.63F;
         this.stepHeight = 4;
         this.getNavigator().setBreakDoors(true);
         this.tasks.addTask(0, new EntityAISwimming(this));
