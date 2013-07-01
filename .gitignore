@@ -232,13 +232,13 @@ pip-log.txt
 /temp/*
 
 !/src/minecraft/colossali/*
-/src/minecraft_server/*
-/src/common/*
-/src/minecraft/cpw/*
-/src/minecraft/ibxm/*
-/src/minecraft/mods/*
-/src/minecraft/net/*
-/src/minecraft/paulscode/*
+/minecraft_server/*
+/common/*
+/cpw/*
+/ibxm/*
+/mods/*
+/net/*
+/paulscode/*
 
 *.bat
 *.sh
