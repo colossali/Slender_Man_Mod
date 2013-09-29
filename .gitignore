@@ -218,26 +218,26 @@ pip-log.txt
 ## Minecraft
 ##############
 
-/bin/*
-/conf/*
-/docs/*
-/eclipse/*
-/forge/*
-/jars/*
-/lib/*
-/logs/*
-/modsrc/*
-/reobf/*
-/runtime/*
-/temp/*
+bin/*
+conf/*
+docs/*
+eclipse/*
+forge/*
+jars/*
+lib/*
+logs/*
+modsrc/*
+reobf/*
+runtime/*
+temp/*
 
-/minecraft_server/*
-/common/*
-/cpw/*
-/ibxm/*
-/mods/*
-/net/*
-/paulscode/*
+minecraft_server/*
+common/*
+cpw/*
+ibxm/*
+mods/*
+net/*
+paulscode/*
 
 *.bat
 *.sh
