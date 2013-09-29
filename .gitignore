@@ -231,7 +231,6 @@ pip-log.txt
 /runtime/*
 /temp/*
 
-!/src/minecraft/colossali/*
 /minecraft_server/*
 /common/*
 /cpw/*
